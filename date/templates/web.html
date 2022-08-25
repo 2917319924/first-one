@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+	<meta charset="utf-8">
+	<title>
+		
+	</title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+			list-style-type: none;
+            text-decoration: none;
+
+		}
+		#header{
+
+            position: relative;
+			background-color: rgba(255, 255, 255, 0.8);
+			box-shadow: 0 2px 10px 5px rgba(0, 0, 0, 0.1);
+			line-height: 56px;
+
+			height: 56px;
+		}
+		.nav{
+			position: relative;
+			display: flex;
+			flex-direction: row;
+			width: 1320px;
+			margin: 0 auto;
+			font-family: '微软雅黑';
+			font-weight: 300;
+/*			float: left;
+*/			
+		}
+		.nav h3{
+			font-size: 30px;
+		}
+		.nav h3 span{
+			color: red;
+			font-size: 35px;
+		}
+		#bannas{
+			position: relative;
+			animation: name 8s infinite;
+			background-color: rgba(0, 0, 0, 0.3);
+			margin: 0 auto;
+			margin-top: 5px;
+			width: 1320px;
+			height: 310px;
+		}
+		body{
+			background-color: rgba(0, 0, 0, 0.1);
+		}
+		#content{
+
+			display: flex;
+			flex-direction: row;
+			margin: 10px auto 80px;
+			width: 1320px;
+
+		}
+		.nav_left{
+			width: 340px;
+			float: left;
+			/*height: auto;*/
+		}
+		.nav_right{
+			margin: 0 10px;
+			width: 1005px;
+
+
+		}
+		.footer{
+			clear: both;
+			display: flex;
+			width: 100%;
+			background-color: white;
+
+			height: 200px;
+		}
+		.nav .ul ul{
+			float: left;
+			margin: 0 30px;
+		}
+		.nav .ul ul li{
+			display: inline-block;
+			font-size: 20px;
+			
+		}
+		.nav .ul ul li a{
+			color: rgba(0, 0, 0, 0.9);
+			text-decoration: none;
+			padding: 0 20px;
+			display: block;
+			font-family: 'PingFang SC';
+		}
+		.nav .ul ul li a:hover{
+			background-color: rgba(0, 0, 0, 0.2);
+		}
+		.login{
+			display: flex;
+            flex-direction: row-reverse;
+            margin: 0 50px 0 180px;
+
+			font-size: 15px;
+
+			font-weight: 400;
+		}
+		.nav .login input{
+			/*padding: 10px;*/
+			/*border: none;*/
+			/*border: 1px 0 0 1px;*/
+			border: none;
+			background-color: rgba(0, 0, 0, 0.1);
+
+			/*background-color: rgba(0, 0, 0, 0.4px);*/
+
+			width: 350px;
+			outline: none;
+			/*border-radius: 10px 0 0 10px;*/
+			height: 30px;
+		}
+		.nav .login input button::after{
+			border: none;
+			background: #f5f6f7;
+			display: block;
+			color: rgba(0, 0, 0, .1);
+
+		}
+		@keyframes name{
+			0%{
+				background: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fmingtengnet.cn%2Fupload%2F2019-10-08%2F6370614286106250003772238.gif&refer=http%3A%2F%2Fmingtengnet.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1642067187&t=487570d1cf323af0cb7d8c87a96e366c);
+
+			}
+			100%{
+				background: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic2.zhimg.com%2Fv2-cc89624b3c49c10106fd7fb3bbd0690d_b.gif&refer=http%3A%2F%2Fpic2.zhimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1642052245&t=0517d9e85c525224a40bb76f50d566da);
+			}
+		}
+		.bannas_content{
+			width: 100%;
+			height: 200px;
+			background-color: rgba(255, 255, 255, 0.6);
+			position: absolute;
+
+			bottom: 0;
+		}
+		.tx{float: left;
+			width: 100px;
+			border-radius: 100%;
+			margin: 20px 50px;
+		}
+		.text{
+			margin: 10px 15px;
+		}
+		.text_1{
+			margin: 45px 0;
+		}
+		.text_1>h3{
+			font-weight: 400;
+			font-size: 40px;
+		}
+		.text_1 >p{
+			font-size: 20px;
+			color: rgba(0, 0, 0, 0.7);
+		}
+		.report{
+			background-color: white;
+			border-radius: 3px;
+			box-shadow: 1px 0 15px 3px rgba(0, 0, 0, 0.1);
+			width: 100%;
+		}
+		.right_text{
+			/*padding: 0 5px;*/
+			line-height: 48px;
+			border-radius: 5px;
+			box-shadow: 1px 1px 6px 3px rgba(0, 0, 0, 0.1);
+			display: flex;
+			flex-direction: row;
+			height: 48px;
+			background-color: white;
+			width: 100%;
+
+		}
+		.right_text ul li{
+			display: inline-block;
+		}
+		.right_text ul{
+			margin: 0 10px;
+		}
+		.right_text ul li a{
+			display: block;
+			padding: 0 15px;
+			text-decoration: none;
+			color: rgba(0, 0, 0, 0.7);
+			font-size: 25px;
+
+		}
+		.book{
+			margin-top: 2px;
+			background-color: white;
+		}
+		.date{
+			padding: 24px 0;
+			margin: 0 24px;
+			
+			height: 100px;
+			
+			display: flex;
+			flex-direction: column;
+		}
+		.date>p{
+			font-size: 18px;
+			margin: 8px 0 0;
+			color: rgba(0, 0, 0, 0.4);
+			font-family: PingFang SC,Hiragino Sans GB,Arial,Microsoft YaHei,Verdana,Roboto,Noto,Helvetica Neue,sans-serif;;
+
+		}
+		.date>h2{
+			font-size: 20px;
+			font-family: PingFang SC,Hiragino Sans GB,Arial,Microsoft YaHei,Verdana,Roboto,Noto,Helvetica Neue,sans-serif;;
+			font-weight: 400;
+		}
+		.date h3{
+			margin: 16px 0 0;
+		}
+		.date{
+			/*padding: 24px 0;*/
+			border-bottom: rgba(0, 0, 0, 0.4) solid 1px;
+		}		
+		.report>h1{
+			font-size: 25px;
+			font-weight: 500;
+			padding: 20px 10px;
+			font-family: '微软雅黑';
+
+		}
+		.report ul a{
+			font-size: 18px;
+			color: rgba(0, 0, 0, 0.63);
+			display: block;
+			padding: 20px 20px;
+		}
+		.name{
+			border-radius: 2px;
+			margin: 15px 0;
+			background-color: white;
+		}
+		.name img{
+			padding: 20px 60px;
+		}
+		.ba{
+			width: 400px;
+			font-size: 40px;
+			margin: 0 auto;
+
+		}
+		.ba>div{
+			padding: 30px;
+			text-align: center;
+		}
+        #login_s{
+            cursor: pointer;
+            display: block;
+            padding: 0 20px;
+            font-size: 18px;
+            font-weight: 600;
+            color: rgba(0,0,0,0.4);
+            font-family: "Lucinda Grande", "Lucinda Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+        }
+        #login_s:hover{
+            background-color: rgba(0,0,0,0.2);
+
+        }
+        .logins{
+
+            cursor: pointer;
+
+        }
+        .login_1{
+            box-shadow: 2px 1px 10px 10px rgba(0,0,0,.1);
+            display: none;
+
+
+            z-index: 2;
+            width: 150px;
+            position: absolute;
+
+            {#height: 50px;#}
+        }
+        .login_1>a>h3{
+            {#background-color: white;#}
+            font-size: 15px;
+            {#box-shadow: 0px 0px 15px 10px rgba(0,0,0,.1);#}
+            color: rgba(0,0,0,0.4);
+            font-weight: 400;
+            display: block;
+            text-align: center;
+        }
+        .login_1>a>h3:hover{
+            background-color: rgba(0,0,0,.2);
+        }
+        .logins:hover .login_1{
+            display: block;
+        }
+        #login_flex{
+            transition: all 0.3s linear;
+
+            height: 100%;
+            z-index: 3;
+            width: 100%;
+            position: fixed;
+            left: 0;
+            top: 0;
+            background-color: rgba(0,0,0,.3);
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+        #login_flexs{
+            transition: all 0.3s linear;
+
+            height: 100%;
+            z-index: 3;
+            width: 100%;
+            position: fixed;
+            left: 0;
+            top: 0;
+            background-color: rgba(0,0,0,.3);
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+        @keyframes null{
+            from{
+                transform:translateX(-100%) rotate(-60deg) scale(.5);
+            }
+            50%{
+                transform:translateX(0) rotate(0) scale(1);
+            }
+            90%{
+                transform:translateX(20px) rotate(0) scale(.8);
+            }
+            }
+        to{
+            transform:translateX(0) rotate(0) scale(1);
+        }
+
+        .displsy{
+            animation: null 0.5s;
+            position: relative;
+            height: 400px;
+            width: 600px;
+            background-color: white;
+            border-radius: 5px;
+
+        }
+        .close{
+            background: url({% static 'close.png' %});
+            position: absolute;
+            top: 0;
+            font-size: 30px;
+            cursor: pointer;
+            right: 10px;
+        }
+        .get{
+
+            text-align: center;
+            padding: 50px 0;
+
+        }
+        .band h3{
+            font-size: 50px;
+        }
+        .band h3>span{
+            color: red;
+        }
+        .names{
+            margin: 20px 100px;
+            font-size: 35px;
+            color: rgba(0,0,0,0.5);
+            font-weight: 500;
+
+
+            display: flex;
+            flex-direction: column;
+        }
+        .names>label>input{
+
+            outline: none;
+            height: 45px;
+            width: 300px;
+        }
+        #submit{
+            margin: 20px 80px;
+            border: none;
+            font-size: 20px;
+            display: block;
+            height: 60px;
+            width: 300px;
+        }
+
+
+
+
+
+
+			
+	</style>
+		
+</head>
+<body>
+<div id="login_flex">
+{#    <form method="post" action="/book1/">#}
+
+
+    <div class="displsy">
+        <div class="close" onclick="closes()">
+            X
+
+        </div>
+        <div class="get band">
+            <h3><span>S</span>tudent</h3>
+        </div>
+        <div class="names">
+            <label for="username">账号:<input style="font-size: 20px" type="text" name="账户" id="username"></label>
+            <label for="password">密码:<input style="font-size: 20px" type="password" name="" id="password"></label>
+            <input id="submit" type="submit" value="登入">
+        </div>
+
+    </div>
+
+
+
+    </div>
+
+
+<div class="registered">
+
+
+    <style type="text/css">
+        .wrap{
+            animation: null 0.8s;
+            width: 550px;
+            height: 550px;
+            padding: 10% 0;
+            position: fixed;
+            opacity: 0.8;
+        }
+        .container{
+            width: 500px;
+            height: 500px;
+            margin: auto;
+            border-radius: 23px;
+            background-color: rgba(255,255,255,1);
+        }
+        .container h1{
+            text-align: center;
+            color: #000000;
+            font-weight: 500;
+            padding: 20px 0;
+        }
+        .container input{
+            width: 320px;
+            display: block;
+            height: 36px;
+            border: 0;
+            outline: 0;
+            padding: 6px 10px;
+            line-height: 24px;
+            margin: 32px auto;
+        }
+        .container input[type="text"] , .container input[type="password"]{
+            background-color: rgb(245,245,245);
+            font-size: 16px;
+            color: #50a3a2;
+            transition: all 0.5s;
+            border-radius: 20px;
+        }
+        .container input[type='submit']{
+            background-color: rgb(245,245,245);
+            font-size: 16px;
+            letter-spacing: 2px;
+            color: #666666;
+        }
+        .container input:focus{
+            width: 400px;
+        }
+        .container input[type='submit']:hover {
+            cursor: pointer;
+            width: 400px;
+            transition: all 0.5s;
+        }
+
+    </style>
+    <div id="login_flexs">
+    <div class="wrap">
+        <div class="container">
+            <h1 style="color: #000000; margin: 0; text-align: center">注册</h1>
+            <form>
+                <label><input type="text" placeholder="账 号"/></label>
+                <label><input type="text" placeholder="邮 箱"/></label>
+                <label><input type="password"  placeholder="密 码" /></label>
+                <input type="submit" value="注&nbsp册"/>
+                <p class="change_link" style="text-align: center">
+                    <span class="text"></span>
+                </p>
+            </form>
+        </div>
+    </div>
+    </div>
+
+
+
+
+{#    </form>#}
+    <script type="text/javascript">
+        document.getElementById("submit").onclick = function (){
+
+            var user = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if (password){
+                document.getElementById("login_s").innerHTML = user;
+                document.getElementById("fontse").innerHTML = '注销';
+                document.getElementById("fontse1").innerHTML = '切换';
+
+
+                document.getElementById('login_flex').style.display = 'none';
+
+
+            }
+            else {
+                alert('请输入正确的账户')
+            }
+        }
+    </script>
+
+
+</div>
+<script type="text/javascript">
+    function closes(){
+        document.getElementById('login_flex').style.display = 'none'
+        {#document.getElementById('login_flex').style.display = #}
+
+    }
+</script>
+{% block login %}
+{% endblock %}
+<script type="text/javascript">
+    function login(){
+        document.getElementById('login_flex').style.display = 'flex'
+    }
+    function login_1(){
+        document.getElementById('login_flexs').style.display = 'flex'
+    }
+</script>
+	
+	<div id="header">
+		<div class="nav">
+			<h3><span>S</span>tudent</h3>
+			<div class="ul">
+			<ul>
+				<li><a href="#">首页</a></li>
+				<li><a href="#">Html</a></li>
+				<li><a href="#">Css</a></li>
+				<li><a href="#">javaScript</a></li>
+
+			</ul>
+			
+		</div>
+
+		<div class="login">
+
+			<div class="back">
+				<input id="event" type="text" name="" placeholder="请输入"><input type="button" style="height: 30px; width: 40px;border: none;
+			background: rgba(0, 0, 0, 0.6);color: white"; onclick="text()" value="搜索">
+
+
+			</div>
+
+
+
+			
+		</div>
+            <div class="logins"><span id="login_s">登入/注册</span>
+                <div class="login_1">
+                    <a onclick="login()"><h3 id="fontse">登入</h3></a>
+                    <a onclick="login_1()"><h3  id="fontse1">注册</h3></a>
+                </div>
+            </div>
+
+		</div>
+        <script>
+            function text(){
+                texts=document.getElementById("event").value;
+
+                alert(texts)
+            }
+
+        </script>
+		
+		
+	</div>
+	<div id="bannas">
+		
+			<div class="bannas_content">
+				<img class="tx" src="{% static 'user.jfif' %}" alt='头像'>
+				<div class="text">
+
+					<div class="text_1">
+						<h3>mini 博客</h3>
+						<p>个人介绍： *****</p>
+					</div>
+				</div>
+				
+				
+			</div>
+		
+	</div>
+	<div id="content">
+		<div class="nav_left">
+			<div class="report">
+				<h1 style="color: red;">正在学习.+99</h1>
+				<ul>
+					<li><a>计算机硬件</a></li>
+					<li><a>excel</a></li>
+					<li><a>word</a></li>
+					<li><a>Photoshop</a></li>
+					<li><a>CAD</a></li>
+					<li><a>计算机平面设计</a></li>
+					<li><a>网页设计</a></li>
+				</ul>
+			</div>
+			<div class="name">
+				<font style="color:black;padding: 0 50px; font-size: 24px;font-weight: 800;">扫取码私聊投稿建议</font>
+				<img src="{% static '二维码.png' %}">
+				
+			</div>
+
+		</div>
+		<div class="nav_right">
+			<div class="right_text">
+				<ul>
+					<li><a href="http://127.0.0.1:8000/book/" class="book1">首页</a></li>
+					<li><a href="http://127.0.0.1:8000/资源/" class="book2">资源</a></li>
+					<li><a href="http://127.0.0.1:8000/book1/" class="book3">聊天</a></li>
+					<li><a href="#"  id = "book4" onclick="alert('你选择的东西暂时未开发')">课程</a></li>
+				</ul>
+
+			</div>
+			<div class="book">
+				<ul>
+
+                    {% block book2 %}
+
+                    {% endblock %}
+
+				</ul>
+			</div>
+
+		</div>
+	</div>
+	<div class="footer">
+		
+
+		<div class="ba">
+			<div>学生网</div>
+
+			备案：123456789
+		</div>
+	</div>
+</body>
+</html>

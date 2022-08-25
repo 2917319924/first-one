@@ -1,0 +1,77 @@
+{% extends 'web.html' %}
+{% block book2 %}
+    <style>
+        .book1{
+            border-bottom: red solid 2px;
+        }
+        #image{
+            display: none;
+
+            transition: all 0.1s;
+
+        }
+        #image:active{
+            transform: scale(1.3);
+        }
+        #image_1{
+
+            transition: all 0.1s linear;
+
+        }
+        #image_1:active{
+            transform: scale(1.3);
+        }
+
+
+    </style>
+    {% for i in html %}
+        <li class="date">
+            <h2>【报名开启】 2021博客之星评选，属于你的年终表彰</h2>
+            <p>年度盛宴，不容错过</p>
+            <h3>
+                <span style="color: red; padding: 2px;">原创</span>发布博客
+                <span style="padding: 3px;">7</span>小时 ·
+                <a onclick="" class="but" style="cursor: pointer">
+                    <img onclick="buttons(this)" id="image_1" width="25" src="https://csdnimg.cn/release/blogv2/dist/pc/img/newHeart2021White.png">
+                </a>
+                点赞
+                <span style="color: red">+</span>
+                <span onclick="console.log(this.collection_type)" id="z" style="color: red;">1</span>
+            </h3>
+        </li>
+        <script type="text/javascript">
+            function buttons(self){
+                console.log(self)
+                console.log(self.parentNode.parentNode.children[4]);
+                var zangDom = self.parentNode.parentNode.children[4];
+                var zang = zangDom.innerText;
+                if (self.src != 'https://csdnimg.cn/release/blogv2/dist/pc/img/newHeart2021Active.png') {
+                    zang = parseInt(zang) +1;
+                    zangDom.innerText = zang;
+                    self.src = 'https://csdnimg.cn/release/blogv2/dist/pc/img/newHeart2021Active.png';
+                } else {
+                    zang = parseInt(zang) - 1;
+                    zangDom.innerText = zang;
+                    self.src = 'https://csdnimg.cn/release/blogv2/dist/pc/img/newHeart2021White.png';
+                }
+
+
+
+            }
+
+
+
+
+        </script>
+    {% endfor %}
+
+
+
+    <script type="text/javascript">
+    function zs(){
+        alert('222')
+    }
+
+    </script>
+
+{% endblock %}

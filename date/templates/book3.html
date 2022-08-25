@@ -1,0 +1,55 @@
+{% extends 'web.html' %}
+{% block book2 %}
+    <style>
+    .mess{
+        padding: 20px 10px;
+        display: flex;
+        flex-direction: row;
+    }
+        .book3{
+            border-bottom: red solid 2px;
+        }
+        #bookstod{
+            resize: none;
+            outline: none;
+            font-family: '微软雅黑';
+            font-size: 18px;
+            font-weight: 400;
+
+        }
+        #textsd{
+            margin: 24px 0;
+            margin-right: 10px;
+            width: 100px;
+            border: none;
+            
+
+        }
+        .date p{
+            padding: 30px 0;
+        }
+
+
+    </style>
+
+    {% for index in ft %}
+        <li class="date">
+            <h2 class="font_s">{{ index.1 }}</h2>
+        <p>{{ index.2 }}</p>
+
+        </li>
+    {% endfor %}
+    <form method="post" action="/book1/">
+
+
+    
+    <div class="mess">
+        <textarea name="ft" id="bookstod" rows="5" cols="90"></textarea>
+        <input id="textsd" value="发送" type="submit">
+
+    </div>
+    </form>
+
+
+
+{% endblock %}
